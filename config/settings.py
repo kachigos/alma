@@ -87,24 +87,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': config('DB_NAME'),
-#         'PASSWORD': config('DB_PASSWORD'),
-#         'USER': config('DB_USER'),
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-import dj_database_url
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'USER': config('DB_USER'),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-db = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db)
+# import dj_database_url
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql'
+#     }
+# }
+# db = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
