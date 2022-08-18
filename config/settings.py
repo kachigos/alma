@@ -192,3 +192,5 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3001',
     'https://www.thunderclient.com',
 ]
+
+AUTH_USER_MODEL = "account.User"
